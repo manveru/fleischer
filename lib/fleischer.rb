@@ -101,7 +101,7 @@ module Bacon
         @story, @name, @lines = s.story, s.name, s.lines
         @matches = s.story.matches
 
-        should @name do
+        it @name do
           @lines.each do |line|
             if match = @matches.find{|r,b| line =~ r}
               match[1].call(*$~.captures)
